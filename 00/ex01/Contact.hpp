@@ -5,28 +5,27 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cctype>
-using namespace std;
 
 class	Contact
 {
 	private:
-	string	fname;
-	string	lname;
-	string	nickname;
-	string	phonenumber;
-	string	darkestsecret;
+	std::string	fname;
+	std::string	lname;
+	std::string	nickname;
+	std::string	phonenumber;
+	std::string	darkestsecret;
 
 	public:
-	void addfname(); //check for letters
-	void addlname(); //check for letters
+	void addfname();
+	void addlname();
 	void addnickname();
-	void addphonenumber(); //check for numbers
+	void addphonenumber();
 	void addsecret();
-	string getfname()const;
-	string getlname()const;
-	string getnickname()const;
-	string getphonenumber()const;
-	string getsecret()const;
+	std::string getfname()const;
+	std::string getlname()const;
+	std::string getnickname()const;
+	std::string getphonenumber()const;
+	std::string getsecret()const;
 };
 
 #endif
