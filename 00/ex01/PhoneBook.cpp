@@ -40,7 +40,7 @@ void PhoneBook::viewdata() {
 	std::string	temp;
 	std::string	data;
 
-	for (size_t i = 0; i <= total; i++) {
+	for (size_t i = 0; i < total; i++) {
 		temp = newcontact[i].getfname();
 		if (temp.length() > 10) {
 			temp.resize(9);

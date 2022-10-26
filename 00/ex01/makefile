@@ -6,7 +6,7 @@
 #    By: slonnie <slonnie@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 23:49:58 by slonnie           #+#    #+#              #
-#    Updated: 2022/10/25 00:23:10 by slonnie          ###   ########.fr        #
+#    Updated: 2022/10/26 18:40:22 by slonnie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME	= phonebook
 all:	$(NAME)
 
 $(NAME): $(OBJS) $(HDRS)
-		 c++ $(CPPFLAGS) -o $(NAME) $(OBJS) $(HDRS)
+		 CC $(CPPFLAGS) -o $(NAME) $(OBJS) $(HDRS)
 clean:
 	rm -rf $(OBJS)
 
