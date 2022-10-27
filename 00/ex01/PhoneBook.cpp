@@ -65,15 +65,22 @@ void PhoneBook::viewdata() {
 }
 
 void PhoneBook::search() {
-	size_t	i;
+	std::string	str_i;
+	size_t		i;
 	i = 0;
-
+	
+	// надо сначала проверку на цифры сделать потом конвертцию и проверку диапазона
 	std::cout<< "Enter index: "<< std::endl;
-	std::cin>> i;
-	while (i <= 0 && i > total) {
+	std::cin>> str_i;
+	i = stoi(str_i);
+	while (i < 0 && i > total) {
 		std::cout<<" Invalid index: " << i << ". " << "Enter digit from 1 to " << total << ": " <<std::endl;
-		std::cin>> i;
+		if (isdigit(i))
+			break;
+		std::cin>> str_i;
+		i = stoi(str_i);
 	}
+	i -= 1;
 	std::cout<< newcontact[i].getfname() <<std::endl;
 	std::cout<< newcontact[i].getlname() <<std::endl;
 	std::cout<< newcontact[i].getnickname() <<std::endl;
