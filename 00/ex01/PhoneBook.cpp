@@ -8,12 +8,12 @@ void PhoneBook::prompt() {
 	command = upper(command);
 	for (;command != "EXIT";) {
 		if (command == "ADD") {
-			add(index);
+			add(index); // закидывает на лишнюю итерацию
 			if (index < COUNT)
 				index++;
 			else
 				index = 0;
-			if (total < COUNT)
+			if (total <= COUNT)
 				total++;
 		}
 		else if (command == "SEARCH") 
@@ -66,21 +66,21 @@ void PhoneBook::viewdata() {
 
 void PhoneBook::search() {
 	std::string	str_i;
+	char		c_total = total + '0';
 	size_t		i;
 	i = 0;
 	
-	// надо сначала проверку на цифры сделать потом конвертцию и проверку диапазона
-	std::cout<< "Enter index: "<< std::endl;
-	std::cin>> str_i;
-	i = stoi(str_i);
-	while (i < 0 && i > total) {
-		std::cout<<" Invalid index: " << i << ". " << "Enter digit from 1 to " << total << ": " <<std::endl;
-		if (isdigit(i))
-			break;
-		std::cin>> str_i;
-		i = stoi(str_i);
+	if (total == 0) {
+		std::cout<< "At first, add contacts to your amazing phonebook!"<<std::endl;
+		return ;
 	}
-	i -= 1;
+	std::cout<< "Enter index: ";
+	std::cin>> str_i;
+	while((str_i[0] < '1' || str_i[0] > c_total) || str_i.length() != 1) {
+		std::cout<<"Invalid index: " << str_i << ". " << "Enter digit from 1 to " << c_total << ": ";
+		std::cin>> str_i;
+	}
+	i = stoi(str_i) - 1;
 	std::cout<< newcontact[i].getfname() <<std::endl;
 	std::cout<< newcontact[i].getlname() <<std::endl;
 	std::cout<< newcontact[i].getnickname() <<std::endl;

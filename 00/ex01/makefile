@@ -6,7 +6,7 @@
 #    By: slonnie <slonnie@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 23:49:58 by slonnie           #+#    #+#              #
-#    Updated: 2022/10/26 18:40:22 by slonnie          ###   ########.fr        #
+#    Updated: 2022/11/03 18:01:15 by slonnie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ HDRS	= Contact.hpp PhoneBook.hpp
 OBJS	= $(SRCS:.cpp=.o)
 
 #CPP		 = g++
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -I.
 
 NAME	= phonebook
 
@@ -24,7 +24,7 @@ NAME	= phonebook
 all:	$(NAME)
 
 $(NAME): $(OBJS) $(HDRS)
-		 CC $(CPPFLAGS) -o $(NAME) $(OBJS) $(HDRS)
+		 clang++ $(CPPFLAGS) -o $(NAME) $(OBJS)
 clean:
 	rm -rf $(OBJS)
 

@@ -1,7 +1,7 @@
 #include "Contact.hpp"
 
 bool Contact::isstralpha(std::string & str) {
-    for(int i = 0; i < str.length(); i++) {
+    for(size_t i = 0; i < str.length(); i++) {
         if (isalpha(str[i]) == 0)
             return false;
     }
@@ -9,7 +9,7 @@ bool Contact::isstralpha(std::string & str) {
 }
 
 bool Contact::isstrdigit(std::string & str) {
-    for(int i = 0; i < str.length(); i++) {
+    for(size_t i = 0; i < str.length(); i++) {
         if (isdigit(str[i]) == 0)
             return false;
     }
@@ -38,13 +38,13 @@ std::string Contact::getsecret() const {
 
 void Contact::addfname() {
 	std::cout<< "Insert your first name: ";
-	getline(std::cin, lname);
+	getline(std::cin, fname);
 	while (fname.length() >= 0) {
 		if (fname.empty())
 			std::cout<< "String cannot be empty. ";
 		else if (this->isstralpha(fname))
 			break;
-		std::cout<< "Enter only letters. Try again" <<std::endl;
+		std::cout<< "Enter only letters. Try again: ";
 		getline(std::cin, fname);
 	}
 }
@@ -57,13 +57,14 @@ void Contact::addlname() {
 			std::cout<< "String cannot be empty. ";
 		else if (this->isstralpha(lname))
 			break;
-		std::cout<< "Enter only letters. Try again" <<std::endl;
+		std::cout<< "Enter only letters. Try again: ";
 		getline(std::cin, lname);
 	}
 }
 
 void Contact::addnickname() {
 	std::cout<< "Insert your nickname: ";
+	getline(std::cin, nickname);
 	while (nickname.empty()) {
 		std::cout<< "String cannot be empty. Try again: ";
 		getline(std::cin, nickname);
