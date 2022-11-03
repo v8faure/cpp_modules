@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-#define COUNT	8
+#define COUNT	7
 
 #include <iostream>
 #include <string>

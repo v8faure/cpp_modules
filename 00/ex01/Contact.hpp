@@ -14,6 +14,8 @@ class	Contact
 	std::string	nickname;
 	std::string	phonenumber;
 	std::string	darkestsecret;
+	bool isstralpha(std::string & str);
+	bool isstrdigit(std::string & str);
 
 	public:
 	void addfname();
