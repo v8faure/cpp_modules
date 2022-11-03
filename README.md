@@ -1,2 +1,2 @@
-C++ Modules School21
+C++ Modules School21\n
 Goal: learn classes
