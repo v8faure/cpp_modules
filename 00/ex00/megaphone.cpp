@@ -1,16 +1,13 @@
 #include <iostream>
 #include <string>
 
-// using namespace std;
-
-int main() {
+int main(int argc, char **argv) {
 	std::string	str;
-	
-	size_t	i;
 
-	std::cin>> str;
+	for(int i = 1; i < argc; i++) 
+		str += argv[i];
 	if (!str.empty()) {
-		for(i = 0; i < str.length(); i++) {
+		for(size_t i = 0; i < str.length(); i++) {
 			std::cout<< (char)toupper(str[i]);
 		}
 	}
