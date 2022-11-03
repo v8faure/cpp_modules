@@ -8,7 +8,7 @@ void PhoneBook::prompt() {
 	command = upper(command);
 	for (;command != "EXIT";) {
 		if (command == "ADD") {
-			add(index); // закидывает на лишнюю итерацию
+			add(index);
 			if (index < COUNT)
 				index++;
 			else
