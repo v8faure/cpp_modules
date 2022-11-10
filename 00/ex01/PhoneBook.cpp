@@ -39,6 +39,7 @@ void PhoneBook::add(size_t index) {
 void PhoneBook::viewdata() {
 	std::string	temp;
 	std::string	data;
+	size_t		j;
 
 	for (size_t i = 0; i < total; i++) {
 		temp = newcontact[i].getfname();
@@ -46,17 +47,38 @@ void PhoneBook::viewdata() {
 			temp.resize(9);
 			temp += ".";
 		}
+		else {
+			j = 10 - temp.length();
+			temp.clear();
+			for (;j > 0; j--)
+				temp += " ";
+			temp = temp + newcontact[i].getfname();
+		}
 		data = " | " + temp;
 		temp = newcontact[i].getlname();
 		if (temp.length() > 10) {
 			temp.resize(9);
 			temp += ".";
 		}
+		else {
+			j = 10 - temp.length();
+			temp.clear();
+			for (;j > 0; j--)
+				temp += " ";
+			temp = temp + newcontact[i].getlname();;
+		}
 		data += " | " + temp;
 		temp = newcontact[i].getnickname();
 		if (temp.length() > 10) {
 			temp.resize(9);
 			temp += ".";
+		}
+		else {
+			j = 10 - temp.length();
+			temp.clear();
+			for (;j > 0; j--)
+				temp += " ";
+			temp = temp + newcontact[i].getnickname();
 		}
 		data += " | " + temp;
 		std::cout<< i + 1 << data <<std::endl;
@@ -81,9 +103,9 @@ void PhoneBook::search() {
 		std::cin>> str_i;
 	}
 	i = stoi(str_i) - 1;
-	std::cout<< newcontact[i].getfname() <<std::endl;
-	std::cout<< newcontact[i].getlname() <<std::endl;
-	std::cout<< newcontact[i].getnickname() <<std::endl;
-	std::cout<< newcontact[i].getphonenumber() <<std::endl;
-	std::cout<< newcontact[i].getsecret() <<std::endl;
+	std::cout<< "Firstname  : " << newcontact[i].getfname() <<std::endl;
+	std::cout<< "Lastname   : " << newcontact[i].getlname() <<std::endl;
+	std::cout<< "Nickname   : " << newcontact[i].getnickname() <<std::endl;
+	std::cout<< "Phone      : " << newcontact[i].getphonenumber() <<std::endl;
+	std::cout<< "Dark secret: " << newcontact[i].getsecret() <<std::endl;
 }
