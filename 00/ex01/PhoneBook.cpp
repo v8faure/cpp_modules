@@ -89,8 +89,7 @@ void PhoneBook::viewdata() {
 void PhoneBook::search() {
 	std::string	str_i;
 	char		c_total = total + '0';
-	size_t		i;
-	i = 0;
+	size_t		i = 0;
 	
 	if (total == 0) {
 		std::cout<< "At first, add contacts to your amazing phonebook!"<<std::endl;
