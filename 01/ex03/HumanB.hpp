@@ -1,19 +1,20 @@
-#ifndef HUMANA_H
-# define HUMANA_H
+#ifndef HUMANB_H
+# define HUMANB_H
 
 #include "Weapon.hpp"
 
-class   HumanA {
+class   HumanB {
 	private:
 	Weapon		weaponB;
 	std::string	nameB;
 
 	public:
-	HumanA();
-	// HumanA(std::string & nmA, Weapon & tp) {
-	// 	nameA = nmA;
-	// 	weaponA = tp;
+	HumanB();
+	HumanB(std::string nmB) {
+		nameB = nmB;
 	}
+	~HumanB();
+	void setWeapon(Weapon tpB);
 	void attack(void);
 };
 

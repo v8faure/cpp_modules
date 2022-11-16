@@ -1,9 +1,9 @@
 #include "Weapon.hpp"
 
-void Weapon::setType(std::string & tp) {
-    type = tp;
+void Weapon::setType(std::string type) {
+    type_ = type;
 }
 
-std::string Weapon::getType(void) {
-    return type;
+std::string & Weapon::getType(void) {
+    return type_;
 }
