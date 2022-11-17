@@ -9,15 +9,7 @@ class   HumanA {
 	Weapon		& weaponA;
 
 	public:
-	// HumanA();
-	HumanA(std::string nmA, Weapon & tpA): nameA(nmA), weaponA(tpA) {}
-	// 	nameA = nmA;
-	// 	weaponA = tpA;
-	// 	// weaponA.setType(tpA.getType());
-	// }
-	// ~HumanA() {
-	// 	std::cout<< nameA << "destroyed" <<std::endl;
-	// }
+	HumanA(std::string nmA, Weapon & tpA);
 	void attack(void);
 };
 
