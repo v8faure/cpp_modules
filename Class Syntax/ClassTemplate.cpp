@@ -31,7 +31,7 @@ ClassTemplate::ClassTemplate(const ClassTemplate &copy) {*this = copy;}			// Д�
 // 	fieldStr = copy.getFieldStr();
 // }
 
-ClassTemplate::~ClassTemplate() {} // добавить варианты с delete
+ClassTemplate::~ClassTemplate() {}
 
 ClassTemplate & ClassTemplate::operator=(const ClassTemplate &equal) {
 	if (this != &equal) {														// Всегда проверяем не равне ли переданный объект сам себе
